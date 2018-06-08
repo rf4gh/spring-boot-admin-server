@@ -33,6 +33,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         	.authorizeRequests()
             	.antMatchers(adminContextPath + "/assets/**").permitAll()
             	.antMatchers(adminContextPath + "/login").permitAll()
+            	// TODO DXCRFE the actuator should be protected but isn't
+            	.antMatchers(adminContextPath + "/actuator/**").permitAll()
             	.anyRequest().authenticated()
         .and()
         	.formLogin()

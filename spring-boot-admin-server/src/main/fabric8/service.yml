@@ -1,0 +1,8 @@
+# resource fragment for creation of NodePort service instread of ClusterIP
+metadata:
+  annotations:
+    api.service.kubernetes.io/path: /hello
+spec:
+  type: NodePort
+  selector:
+    app: spring-boot-admin-server

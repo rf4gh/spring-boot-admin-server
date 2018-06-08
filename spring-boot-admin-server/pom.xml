@@ -25,6 +25,7 @@
 		<spring-cloud-connectors.version>2.0.2.RELEASE</spring-cloud-connectors.version>
 		<!-- <codecentric.boot.admin.version>1.5.7</codecentric.boot.admin.version> -->
 		<codecentric.boot.admin.version>2.0.0-SNAPSHOT</codecentric.boot.admin.version>
+		<fabric8.mvn.version>3.5.37</fabric8.mvn.version>
 	</properties>
 
 	<dependencies>
@@ -67,6 +68,20 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>io.fabric8</groupId>
+				<artifactId>fabric8-maven-plugin</artifactId>
+				<version>${fabric8.mvn.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>resource</goal>
+							<!-- <goal>helm</goal> -->
+							<goal>build</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
